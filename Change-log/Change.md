@@ -4,10 +4,7 @@
 
 - **`KER0_OPAQUE(bool)`** — opaque predicate macro. Resolves at runtime to the passed `true`/`false` value, but is emitted as 32-bit bitwise arithmetic (`bit32.band`) that static analyzers cannot fold, so both branches of an `if` remain equally plausible to deobfuscators.
 - **`KER0_ASSUME(expression, expected)`** — compile-time value snapshot. The macro is replaced by the expected numeric constant and the original expression is removed from the protected output entirely (e.g. `game.PlaceId` no longer appears as a runtime lookup). Behavior is undefined if the assumption does not hold at runtime.
-- **`KER0_LINE` as a value** — the macro now works both as `KER0_LINE()` and as a plain value (`local ln = KER0_LINE`), matching the documented examples.
-- **Reserved-prefix validation** — the `KER0_` prefix is now enforced at compile time: an unknown `KER0_*` identifier, a `local` declared under the prefix, or a macro used as a plain value fails the build with a descriptive error. `/api/obfuscate` returns these as HTTP 400 with the real message instead of a generic 500.
-- **Full macro documentation in the UI** — the Docs section now covers all 19 macros with descriptions and examples in English and Russian (previously only 8 of 17 were listed).
-- **Macro regression test suite** — `scripts/macro-test.mjs` covers all 19 macros, argument validation, reserved-prefix rejection, and traversal edge cases (32 checks; run with `npm run build && node scripts/macro-test.mjs`).
+- **`KER0_LINE` as a value** — the macro now works both as `KER0_LINE()` and as a plain value (`local ln = KER0_LINE`).
 
 ### Fixed
 
