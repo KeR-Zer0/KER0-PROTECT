@@ -1,14 +1,3 @@
----
-name: ker0-obfuscation
-description: "Ker0 (Ker0 obfuscator / Ker0 Protect / Lua-Luau protector) compile-time macros, macro stubs for unprotected/dev runs, script protection, and post-obfuscation debugging. Use when the user mentions Ker0, ker0-protect.pp.ua, KER0_OBFUSCATED, KER0_ENC_STRING, KER0_ENC_NUM, KER0_ENC_FUNC, KER0_ENC_FUNC_SEED, KER0_ASSUME, KER0_OPAQUE, KER0_SECURE_CALL, KER0_SECURE_CALLBACK, KER0_INLINE, KER0_NO_VIRTUALIZE, KER0_JIT, KER0_JIT_MAX, KER0_NO_UPVALUES, KER0_IS_CALLER_KER0, KER0_GET_RNG_SEED, KER0_LINE, KER0_BEGIN_CLIENT_LINES, KER0_CRASH, or asks to obfuscate/protect/harden a Lua script, wrap sensitive code (API keys, tokens, license checks, secrets), stub macros so the script runs without the obfuscator, or debug a crash that only happens after obfuscation (e.g. '[string "Ker0"]:269: attempt to call a number value')."
-metadata:
-  {
-    "openclaw":
-      {
-        "notes": "Ker0 macros are compile-time only. They exist ONLY in a protected build; in an unprotected run they are nil and must not be reached."
-      }
-  }
----
 # Ker0 Obfuscation Skill
 
 Ker0 is a compile-time protector for Lua/Luau scripts. It rewrites a script at
